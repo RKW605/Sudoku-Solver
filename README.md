@@ -39,7 +39,7 @@ python SudokuGUI.py
 - 🗑️ Press DELETE to clear a cell
 - ⏯️ Press SPACE to visualize the solving algorithm
 - 💡 Press H for a hint
-- ✅ Press RETURN to check if your solution is correct
+- ✅ Press ENTER to check if your solution is correct
 
 ## 🎛️ Game Controls
 
