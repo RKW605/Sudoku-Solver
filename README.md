@@ -1,84 +1,130 @@
-<p align="center">
-  <img src="https://github.com/dhhruv/Sudoku-Solver/blob/master/assets/thumbnail.png" width="256" height="256">
-  <h2 align="center" style="margin-top: -4px !important;">Sudoku Solver: A Fun and Challenging Way to Exercise Your Brain!</h2>
-  <p align="center">
-    <a href="https://github.com/dhhruv/Sudoku-Solver/blob/master/LICENSE">
-      <img src="https://img.shields.io/badge/license-MIT-informational">
-    </a>
-    <a href="https://www.python.org/">
-    	<img src="https://img.shields.io/badge/python-v3.8-informational">
-    </a>
-  </p>
-</p>
-<p align="center">
-	<img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
-</p>
-<p align="center">   
-	<a href="https://dev.to/dhhruv/sudoku-solver-a-visualizer-made-using-backtracking-algorithm-5f0d">
-    	<img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white">
-    </a>
-</p>
+# 🎮 Sudoku Game
 
+A Python-based Sudoku game with a beautiful graphical user interface built using Pygame. This implementation features a playable Sudoku puzzle with visual solving capabilities, hints, and real-time feedback.
 
-- Are you ready to put your logical thinking and reasoning skills to the test? Look no further than Sudoku Solver, the ultimate tool for solving Sudoku puzzles quickly and easily.
+## 🚀 Features
 
-- Sudoku is a popular number-placement puzzle game that requires players to fill a nine-by-nine grid with digits so that each row, column, and 3x3 section contains numbers between 1 and 9, with each number used once and only once in each section. It's a challenging game that helps improve concentration, memory, and cognitive abilities.
+- 🎨 Interactive Sudoku board with GUI
+- 🎲 Random puzzle generation
+- 👀 Visual puzzle solving animation
+- 💡 Hint system
+- ✅ Real-time error checking
+- ⏱️ Timer to track solving duration
+- ❌ Wrong move counter
 
-- With Sudoku Solver, you don't have to spend hours solving puzzles by hand. Our powerful algorithm solves almost any Sudoku puzzle in seconds, allowing you to move on to more challenging puzzles quickly. Plus, our visualizer feature demonstrates how the backtracking algorithm works, so you can understand the logic behind each solution.
+## 📋 Requirements
 
-## Features:
-- Generates a random, solvable Sudoku board every time the script is executed
-- Easy-to-use GUI for inputting and solving puzzles
-- Visualizer feature demonstrates how the backtracking algorithm works
-- Option to receive hints for tricky puzzles
-- Improves cognitive abilities, including concentration and logical thinking
+- Python 3.8 or above
+- Pygame 2.0.1 or above
 
-## How to Use:
-To use Sudoku Solver, simply download the repository and run the SudokuGUI.py file. You'll be presented with a random Sudoku board and a GUI for inputting your solutions. Use the left-click to select the box you want to fill, then enter your value and confirm it by pressing the Enter key.
+## 🔧 Installation
 
-<p align="center">
-	<img src="https://github.com/dhhruv/Sudoku-Solver/blob/master/assets/Entering%20Values.gif">
-</p>
-
-If you get stuck on a tricky puzzle, press the Spacebar key to solve the board using the backtracking algorithm. You can also receive hints by pressing the "h" key, which will display a random correct value on the board.
-
-<p align="center">
-	<img src="https://github.com/dhhruv/Sudoku-Solver/blob/master/assets/Visualizer.gif">
-</p>
-
-## Input:
-
-| Keys              | Actions                                                         |
-|-------------------|-----------------------------------------------------------------|
-| `Left Click`      | Selects the Box to enter a value into that cell.                |
-| `Enter`           | Confirms the Value written on the board.     |
-| `Backspace/Delete`| Deletes the value in that cell.                                 |
-| `Space`           | Solves the Board using the Algorithm.                           |
-| `h`               | Gives a Hint. Displays a random correct value on the board.     |
-
-## Requirements:
-To run Sudoku Solver, you'll need to have Python and PyGame installed on your system. You can install the necessary requirements using pip:
-```
-pip install -r requirements.txt
+1. Make sure you have Python installed on your system
+2. Install the required package:
+```bash
+pip install pygame
 ```
 
-## Execution:
-- Clone this repository using
-```
-git clone https://github.com/dhhruv/Sudoku-Solver.git
-```
-**OR**
-- Zip Download the Repository and Extract it's contents.
-- Now run the [SudokuGUI](https://github.com/dhhruv/Sudoku-Solver/blob/master/SudokuGUI.py) file directly in your Terminal using
-```
+## 🎯 How to Run
+
+Run the game by executing the SudokuGUI.py file:
+```bash
 python SudokuGUI.py
 ```
-**OR**
-```
-python3 SudokuGUI.py
-```
 
-## Conclusion:
-If you're a fan of Sudoku puzzles, Sudoku Solver is the perfect tool to help you solve them quickly and easily. With its powerful algorithm and easy-to-use GUI, you'll be solving puzzles in no time. Plus, Sudoku is a great way to exercise your brain and improve your cognitive abilities, making it a fun and challenging game for people of all ages. So what are you waiting for? Download Sudoku Solver today and start playing!
+## 🎮 How to Play
 
-<p align='center'><b>Made with ❤ by Dhruv Panchal</b></p>
+- 🖱️ Click on a cell to select it
+- 🔢 Type a number (1-9) to fill the selected cell
+- 🗑️ Press DELETE to clear a cell
+- ⏯️ Press SPACE to visualize the solving algorithm
+- 💡 Press H for a hint
+- ✅ Press RETURN to check if your solution is correct
+
+## 🎛️ Game Controls
+
+| Key | Action |
+|-----|--------|
+| Left Mouse Click | Select a cell |
+| Number Keys (1-9) | Enter a number in the selected cell |
+| Delete | Clear the selected cell |
+| Space | Visualize the solving algorithm |
+| H | Get a hint |
+| Return | Check solution |
+
+## 📁 Project Structure
+
+### `SudokuGUI.py`
+Contains the game's GUI implementation and main game loop.
+
+#### Classes and Functions:
+
+1. **Board Class**
+   - `__init__(self, window)`: Initializes the Sudoku board and creates a solved version
+   - `draw_board(self)`: Draws the Sudoku board on the Pygame window
+   - `deselect(self, tile)`: Deselects all tiles except the given tile
+   - `redraw(self, keys, wrong, time)`: Redraws the board with current state
+   - `visualSolve(self, wrong, time)`: Solves the board visually with animation
+   - `hint(self, keys)`: Provides a hint by filling in a random empty tile
+
+2. **Tile Class**
+   - `__init__(self, value, window, x1, y1)`: Initializes a tile with position and value
+   - `draw(self, color, thickness)`: Draws the tile with specified color and border
+   - `display(self, value, position, color)`: Displays the tile's value
+   - `clicked(self, mousePos)`: Checks if the tile was clicked
+
+### `sudokutools.py`
+Contains the core Sudoku logic including board generation, validation, and solving algorithms.
+
+#### Functions:
+
+1. **Board Generation and Display**
+   - `print_board(board)`: Prints the Sudoku board in a readable format
+   - `generate_board()`: Creates a random, solvable Sudoku board
+   - `fill_cells(board, row, col)`: Helper function to fill remaining cells
+
+2. **Solving Logic**
+   - `find_empty(board)`: Finds the next empty cell in the board
+   - `valid(board, pos, num)`: Checks if a number is valid in a given position
+   - `solve(board)`: Solves the Sudoku board using backtracking
+
+## 🔍 Technical Details
+
+### Algorithms Used
+
+1. **Backtracking Algorithm**
+   - Used for both puzzle solving and generation
+   - Recursively tries possible numbers until a solution is found
+   - Efficiently handles invalid moves by backtracking
+
+2. **Random Puzzle Generation**
+   - Starts with a solved board
+   - Removes numbers while ensuring a unique solution
+   - Maintains Sudoku rules throughout the process
+
+3. **Real-time Validation**
+   - Checks row, column, and 3x3 box constraints
+   - Provides immediate feedback on valid/invalid moves
+
+## 🎨 Visual Features
+
+- Color-coded feedback for correct/incorrect moves
+- Animated solving visualization
+- Clean, modern interface
+- Responsive grid layout
+- Timer and error counter display
+
+## 🤝 Contributors
+
+- 202401053 - Anghan Nena
+- 202401103 - Ruhan Kureshi
+- 202401105 - Jay Lavingiya
+- 202401111 - Manali Malani
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+---
+
+Made with ❤️ using Python and Pygame
